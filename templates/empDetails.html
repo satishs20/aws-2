@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" style="width:100%;height:100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail</title>
+</head>
+<body id="firstPage" style="margin-top: 100px;background:linear-gradient(to bottom, ghostwhite 0%, #dfdfff 100%);">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="height:10%;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" style="font-size: 25px;color:rgb(65, 65, 65);margin-top: 6px;"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li ><a href="/addEmp" style="font-size: 22px;color:rgb(65, 65, 65);margin-top: 8px;"><i class="fa fa-users" aria-hidden="true"></i> Add Employee </a></li>
+                    <li><a href="/retrieveEmp" style="font-size: 22px;color:rgb(65, 65, 65);margin-top: 8px;"><i class="fa fa-address-book" aria-hidden="true"></i>
+                        Retrieve Employee Detail</a></li>
+                    
+                </ul>               
+            </div>
+        </div>
+    </nav>
+    <form action="/retrieveEmp" autocomplete="on" method="POST" enctype="multipart/form-data" style="width:800px;height:550px; border-radius: 15px;border-width: medium;background: linear-gradient(to bottom, white 0%, ghostwhite 100%);border-style: double;box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;border-color: aliceblue;">
+
+
+        <form class="form-horizontal" style="width:800px;height:550px;">
+
+
+            <h1 style="font-family: ProximaNovaSemiBold,Arial,sans-serif; font-size: 40px; line-height: 60px; margin-bottom: 20px; margin-left: 15px;  ">Employee Details</h1>
+            
+            <label for="emp_image_file" class="col-lg-2 control-label" style="font-size: 18px;">Image</label>
+            <div class="col-lg-10">
+                <img id="emp_image_file" name="emp_image_file" src="{{ img_url|safe }}" alt="Uploaded Photo" style="margin-bottom:10px;border-width: 10px;border-color: 20px;width: 150px;height:130px;">
+            </div>
+            <br/><br/><br/>
+            <div class="form-group" >
+                <label for="emp_id" class="col-lg-2 control-label" style="font-size: 18px;">Employee Id</label>
+                <div class="col-lg-10" >
+                    <input type="text" class="form-control" id="emp_id" name="emp_id" placeholder="Employee Id" style="margin-bottom: 10px;" value="{{ emp_id|safe }}" readonly>
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="first_name" class="col-lg-2 control-label" style="font-size: 18px;">First Name </label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" style="margin-bottom: 10px;" value="{{ first_name|safe }}" readonly>
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="last_name" class="col-lg-2 control-label" style="font-size: 18px;">Last Name </label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" style="margin-bottom: 10px;" value="{{ last_name|safe }}" readonly>
+                </div>
+            </div>
+           
+
+            <div class="form-group">
+                <label for="pri_skill" class="col-lg-2 control-label" style="font-size: 18px;">Primary Skill</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="pri_skill" name="pri_skill" placeholder="Primary Skill" style="margin-bottom: 20px;" value="{{ pri_skill|safe }}" readonly>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="location" class="col-lg-2 control-label" style="font-size: 18px;">Location</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control"  id="location" name="location" placeholder="Location" style="margin-bottom: 15px;" value="{{ location|safe }}" readonly>
+
+                </div>
+            </div>
+            
+ 
+            <div class="form-group">
+                
+
+                    <button type="submit" action="/retrieveEmp" class="btn btn-primary" style="margin-left:146px;font-size: 15px;">Back</button>
+                
+            </div>
+
+        </form>
+    </form>
+
+</body>
+</html>
