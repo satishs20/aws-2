@@ -1,6 +1,6 @@
 customhost = "hr-db.cpaf838sttar.us-east-1.rds.amazonaws.com"
 customuser = "admin"
 custompass = "12345678"
-customdb = "satsDB"
+customdb = "satsdb"
 custombucket = "satss"
 customregion = "us-east-1"
